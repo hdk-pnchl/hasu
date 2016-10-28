@@ -1,0 +1,59 @@
+{
+	"projectData": {
+		"projectName": "Theta",
+		"defaultPath": "/home"
+	},
+	"navData": {
+		"mainNavData": {
+			"home": {
+				"title": "Home",
+				"active": true,
+				"disabled": false,
+				"hidden": false,
+				"type": "TEXT",
+				"path": "/home"
+			},
+			"aboutUs": {
+				"title": "About Us",
+				"active": false,
+				"disabled": false,
+				"hidden": false,
+				"type": "TEXT",
+				"path": "/aboutUs"
+			},
+			"contactUs": {
+				"title": "Contact Us",
+				"active": false,
+				"disabled": false,
+				"hidden": false,
+				"type": "TEXT",
+				"path": "/contactUs"
+			}
+		}, 
+		"configNavData": {
+			"signUp": {
+				"title": "Sign Up",
+				"active": false,
+				"disabled": false,
+				"hidden": false,
+				"type": "TEXT",
+				"path": "/signUp",
+				"modalSize": "lg",
+				"html": "html/core/signUp.html",
+				"controller": "SignUpController"
+			},
+			"signIn":{
+				"title": "Sign In",
+				"active": false,
+				"disabled": false,
+				"hidden": false,
+				"type": "TEXT",
+				"path": "/signIn",
+				"modalSize": "lg",
+				"html": "html/core/signIn.html",
+				"controller": "SignInController"
+			}
+		}
+	}
+}
+

@@ -1,3 +1,12 @@
+echo "# hasu" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:hdk-pnchl/hasu.git
+git push -u origin master
+
+
+
 http://www.nationalconsumerhelpline.in/ComplaintFile.aspx
 http://www.consumercomplaints.in/new_complaint/
 http://www.consumerhelpline.gov.in/
