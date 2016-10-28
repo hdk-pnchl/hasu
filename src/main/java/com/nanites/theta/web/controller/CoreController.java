@@ -1,4 +1,4 @@
-package com.nanites.theta.web.controller;
+package com.nanites.tbs.web.controller;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -26,13 +26,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nanites.theta.business.bo.MessageEntity;
-import com.nanites.theta.business.bo.ResponseEntity;
-import com.nanites.theta.business.bo.user.UserEntity;
-import com.nanites.theta.business.service.impl.MessageServiceImpl;
-import com.nanites.theta.business.service.impl.user.UserServiceImpl;
-import com.nanites.theta.business.type.response.Param;
-import com.nanites.theta.business.util.CommonUtil;
+import com.nanites.tbs.business.bo.MessageEntity;
+import com.nanites.tbs.business.bo.ResponseEntity;
+import com.nanites.tbs.business.bo.user.UserEntity;
+import com.nanites.tbs.business.service.impl.MessageServiceImpl;
+import com.nanites.tbs.business.service.impl.user.UserServiceImpl;
+import com.nanites.tbs.business.type.response.Param;
+import com.nanites.tbs.business.util.CommonUtil;
 
 @Controller
 @RequestMapping("/core")
@@ -69,7 +69,7 @@ public class CoreController implements ResourceLoaderAware {
 	// data
 	
 	/**
-	 * http://localhost:8080/theta/ctrl/core/getBannerData
+	 * http://localhost:8080/tbs/ctrl/core/getBannerData
 	 * 
 	 * @return
 	 * @throws IOException
@@ -102,7 +102,7 @@ public class CoreController implements ResourceLoaderAware {
 	}
 	
 	/**
-	 * http://localhost:8080/theta/ctrl/core/getUserData
+	 * http://localhost:8080/tbs/ctrl/core/getUserData
 	 * 
 	 * @return
 	 * @throws IOException
@@ -120,7 +120,7 @@ public class CoreController implements ResourceLoaderAware {
 	// web
 	
 	/**
-	 * http://localhost:8080/theta/ctrl/core/signUp
+	 * http://localhost:8080/tbs/ctrl/core/signUp
 	 * 
 	 * @return
 	 * @throws IOException
@@ -134,7 +134,7 @@ public class CoreController implements ResourceLoaderAware {
 	}
 	
 	/**
-	 * http://localhost:8080/theta/ctrl/core/isEmailIdTaken?emailId=hdk.pnchl@gmail.com
+	 * http://localhost:8080/tbs/ctrl/core/isEmailIdTaken?emailId=hdk.pnchl@gmail.com
 	 *
 	 * @param emailID
 	 * @return
@@ -168,7 +168,7 @@ public class CoreController implements ResourceLoaderAware {
 			pwUpdateReqMap.put(Param.EMAIL_ID.name(), emailID);
 			pwUpdateReqMap.put(Param.PW_UPDATE_REQ_TOKEN.name(), pwUpdateReqToken);
 			
-			//http://localhost:8080/theta-static/#/signIn
+			//http://localhost:8080/tbs-static/#/signIn
 			StringBuilder pwUpdateReq = new StringBuilder(CommonUtil.buildUrl(request, "static/#/user/updateForgottenPassword/"));
 			pwUpdateReq.append(CommonUtil.mapToString(pwUpdateReqMap));
 			

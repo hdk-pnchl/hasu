@@ -1,4 +1,4 @@
-package com.nanites.theta.business.bo;
+package com.nanites.tbs.business.bo;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import com.nanites.theta.business.type.response.Param;
+import com.nanites.tbs.business.type.response.Param;
 
 public class ResponseEntity implements Serializable {
 	private static final long serialVersionUID = 1012695220974239571L;

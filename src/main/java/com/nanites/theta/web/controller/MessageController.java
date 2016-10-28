@@ -1,4 +1,4 @@
-package com.nanites.theta.web.controller;
+package com.nanites.tbs.web.controller;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -22,12 +22,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nanites.theta.business.bo.MessageEntity;
-import com.nanites.theta.business.bo.ResponseEntity;
-import com.nanites.theta.business.service.impl.MessageServiceImpl;
-import com.nanites.theta.business.type.response.Param;
-import com.nanites.theta.business.util.CommonUtil;
-import com.nanites.theta.business.util.SearchInput;
+import com.nanites.tbs.business.bo.MessageEntity;
+import com.nanites.tbs.business.bo.ResponseEntity;
+import com.nanites.tbs.business.service.impl.MessageServiceImpl;
+import com.nanites.tbs.business.type.response.Param;
+import com.nanites.tbs.business.util.CommonUtil;
+import com.nanites.tbs.business.util.SearchInput;
 
 @Controller
 @RequestMapping("/message")
@@ -120,7 +120,7 @@ public class MessageController implements ResourceLoaderAware {
 	// data
 
 	/**
-	 * http://localhost:8080/theta/ctrl/message/getColumnData
+	 * http://localhost:8080/tbs/ctrl/message/getColumnData
 	 * 
 	 * @return
 	 * @throws IOException

@@ -1,4 +1,4 @@
-package com.nanites.theta.web.controller.user;
+package com.nanites.tbs.web.controller.user;
 
 import java.io.IOException;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.nanites.theta.business.bo.ResponseEntity;
-import com.nanites.theta.business.bo.user.IDDetailEntity;
-import com.nanites.theta.business.bo.user.UserEntity;
-import com.nanites.theta.business.service.impl.user.IDDetailServiceImpl;
+import com.nanites.tbs.business.bo.ResponseEntity;
+import com.nanites.tbs.business.bo.user.IDDetailEntity;
+import com.nanites.tbs.business.bo.user.UserEntity;
+import com.nanites.tbs.business.service.impl.user.IDDetailServiceImpl;
 
 @Controller
 @RequestMapping("/user/idDetail")

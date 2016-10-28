@@ -1,4 +1,4 @@
-package com.nanites.theta.business.bo.complaint;
+package com.nanites.tbs.business.bo.complaint;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.nanites.theta.business.bo.user.UserEntity;
+import com.nanites.tbs.business.bo.user.UserEntity;
 
 @Entity
 @Table

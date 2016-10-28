@@ -25,7 +25,7 @@
         http://www.springframework.org/schema/util 
         http://www.springframework.org/schema/util/spring-util.xsd">
 	
-	<context:component-scan base-package="com.nanites.theta.business" />
+	<context:component-scan base-package="com.nanites.tbs.business" />
 	<context:annotation-config/>	
 	<context:property-placeholder location="classpath:spring/db-config.properties, classpath:spring/mail-config.properties"/>	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
@@ -38,7 +38,7 @@
 		<property name="dataSource" ref="dataSource"></property>
         <property name="packagesToScan">
             <list>
-                <value>com.nanites.theta.business.bo</value>
+                <value>com.nanites.tbs.business.bo</value>
             </list>
         </property>		
 		<property name="hibernateProperties">

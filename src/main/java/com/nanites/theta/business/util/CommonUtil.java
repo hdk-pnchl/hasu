@@ -1,4 +1,4 @@
-package com.nanites.theta.business.util;
+package com.nanites.tbs.business.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -18,7 +18,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.nanites.theta.business.type.bo.user.Roles;
+import com.nanites.tbs.business.type.bo.user.Roles;
 
 public class CommonUtil {
 	protected static AtomicReference<Long> currentTime = new AtomicReference<>(System.currentTimeMillis());
@@ -153,7 +153,7 @@ public class CommonUtil {
 		builder.append(request.getScheme()).append("://");
 		//localhost:8080/
 		builder.append(request.getServerName()).append(":").append(request.getServerPort());
-		//theta
+		//tbs
 		builder.append(request.getContextPath());
 		return builder.toString();
 	}

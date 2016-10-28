@@ -1,4 +1,4 @@
-package com.nanites.theta.business.bo;
+package com.nanites.tbs.business.bo;
 
 import java.io.Serializable;
 

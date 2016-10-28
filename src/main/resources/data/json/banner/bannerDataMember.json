@@ -1,6 +1,6 @@
 {
 	"projectData": {
-		"projectName": "Theta",
+		"projectName": "tbs",
 		"defaultPath": "/home"	
 	},
 	"navData": {
@@ -88,7 +88,7 @@
 						"disabled": false,
 						"hidden": false,
 						"type": "URL",
-						"path": "/theta/logout"
+						"path": "/tbs/logout"
 					}
 				}
 			}

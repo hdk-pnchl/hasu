@@ -1,4 +1,4 @@
-package com.nanites.theta.business.dao.impl;
+package com.nanites.tbs.business.dao.impl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

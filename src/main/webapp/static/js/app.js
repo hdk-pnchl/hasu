@@ -1,8 +1,8 @@
-var thetaM= angular.module('thetaM', ['ngRoute','ngAnimate','controllersM','servicesM','directiveM','ui.bootstrap']);
+var tbsM= angular.module('tbsM', ['ngRoute','ngAnimate','controllersM','servicesM','directiveM','ui.bootstrap']);
 
-thetaM.config(function($resourceProvider){});
+tbsM.config(function($resourceProvider){});
 
-thetaM.config(['$routeProvider', function($routeProvider){
+tbsM.config(['$routeProvider', function($routeProvider){
 	//Home
 	$routeProvider.when('/home', {
 		templateUrl: 'html/core/home_001.html',
@@ -121,6 +121,6 @@ thetaM.config(['$routeProvider', function($routeProvider){
 	});	
 }]);
 
-thetaM.config(['$locationProvider', function($locationProvider){}]);
+tbsM.config(['$locationProvider', function($locationProvider){}]);
 
 

@@ -1,4 +1,4 @@
-package com.nanites.theta.business.bo.user;
+package com.nanites.tbs.business.bo.user;
 
 import java.io.Serializable;
 
@@ -10,8 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nanites.theta.business.type.bo.user.Gender;
-import com.nanites.theta.business.util.CommonUtil;
+import com.nanites.tbs.business.type.bo.user.Gender;
+import com.nanites.tbs.business.util.CommonUtil;
 
 @Entity
 @Table

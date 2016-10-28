@@ -1,4 +1,4 @@
-package com.nanites.theta.business.service.impl;
+package com.nanites.tbs.business.service.impl;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.nanites.theta.business.bo.MessageEntity;
-import com.nanites.theta.business.dao.impl.MessageDAOImpl;
-import com.nanites.theta.business.util.SearchInput;
+import com.nanites.tbs.business.bo.MessageEntity;
+import com.nanites.tbs.business.dao.impl.MessageDAOImpl;
+import com.nanites.tbs.business.util.SearchInput;
 
 @Service
 @Transactional

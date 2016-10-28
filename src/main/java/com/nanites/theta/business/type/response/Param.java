@@ -1,4 +1,4 @@
-package com.nanites.theta.business.type.response;
+package com.nanites.tbs.business.type.response;
 
 public enum Param {
 	SUCCESS("SUCCESS"), 

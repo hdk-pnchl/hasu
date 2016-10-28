@@ -1,4 +1,4 @@
-package com.nanites.theta.business.dao.impl;
+package com.nanites.tbs.business.dao.impl;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.nanites.theta.business.bo.MessageEntity;
-import com.nanites.theta.business.type.response.Param;
-import com.nanites.theta.business.util.SearchInput;
+import com.nanites.tbs.business.bo.MessageEntity;
+import com.nanites.tbs.business.type.response.Param;
+import com.nanites.tbs.business.util.SearchInput;
 
 @Repository
 @Transactional

@@ -2,8 +2,8 @@ var controllersM= angular.module('controllersM', ['servicesM', 'ui.bootstrap']);
 
 //------------------------------------CORE
 
-controllersM.controller('CoreController', function($scope, $http, $location, $rootScope, ThetaService){
-    ThetaService.core.get({
+controllersM.controller('CoreController', function($scope, $http, $location, $rootScope, tbsService){
+    tbsService.core.get({
             action: "getBannerData"
         }, 
         function(response){
@@ -30,7 +30,7 @@ controllersM.controller('CoreController', function($scope, $http, $location, $ro
 
 //------------------------------------BANNER
 
-controllersM.controller('BannerController', function($scope, ThetaService){
+controllersM.controller('BannerController', function($scope, tbsService){
 
 });
 
@@ -43,7 +43,7 @@ controllersM.controller('HomeController', function($scope){
 
 //------------------------------------SING-UP
 
-controllersM.controller('SignUpController', function($scope, $location, ThetaService){
+controllersM.controller('SignUpController', function($scope, $location, tbsService){
     $scope.user= {};
     $scope.isEmailTaken= false;
     $scope.isPasswordMatching= true;
@@ -53,7 +53,7 @@ controllersM.controller('SignUpController', function($scope, $location, ThetaSer
         }else{
             $scope.isPasswordMatching= true;
             //server call: check if email id not already taken
-            ThetaService.core.save({
+            tbsService.core.save({
                     action: "isEmailIdTaken",
                     emailID: $scope.user.basicDetail.emailID
                 },{},
@@ -63,7 +63,7 @@ controllersM.controller('SignUpController', function($scope, $location, ThetaSer
                     }else{
                         $scope.isEmailTaken= false;
                         //server call: save user
-                        ThetaService.core.save({
+                        tbsService.core.save({
                             action: "signUp"
                         }, 
                         $scope.user, 
@@ -97,7 +97,7 @@ controllersM.controller('AboutUsController', function ($scope) {});
 
 //------------------------------------CONTACT-US
 
-controllersM.controller('ContactUsController', function($scope, ThetaService){
+controllersM.controller('ContactUsController', function($scope, tbsService){
     $scope.alerts= [];
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
@@ -111,7 +111,7 @@ controllersM.controller('ContactUsController', function($scope, ThetaService){
             if(!message.emailID){
                 message.emailID= $scope.$parent.bannerData.USER_DATA.basicDetail.emailID;
             }   
-            ThetaService.core.save({
+            tbsService.core.save({
                     action: "saveMessage"
                 },
                 message,
@@ -137,8 +137,8 @@ controllersM.controller('ContactUsController', function($scope, ThetaService){
 
 //------------------------------------MESSAGE
 
-controllersM.controller('MessageListController', function($scope, ThetaService, $uibModal){
-    ThetaService.message.query({
+controllersM.controller('MessageListController', function($scope, tbsService, $uibModal){
+    tbsService.message.query({
             action: "getColumnData"
         }, 
         function(response){
@@ -176,7 +176,7 @@ controllersM.controller('MessageListController', function($scope, ThetaService, 
         alert("Op not implemented!");
     };
     $scope.fetchMessages = function(searchIp){
-        ThetaService.message.save({
+        tbsService.message.save({
                 action: "listBySeach",
                 searchIp: searchIp
             }, 
@@ -195,14 +195,14 @@ controllersM.controller('MessageListController', function($scope, ThetaService, 
     };
 });
 
-controllersM.controller('MessageController', function($scope, ThetaService, $routeParams){
+controllersM.controller('MessageController', function($scope, tbsService, $routeParams){
     $scope.messageData= {};
-    ThetaService.message.get({
+    tbsService.message.get({
         action: "getFormData"
     }, function(messageFormResp){
         $scope.messageData= messageFormResp;
         if($routeParams.messageID){
-            ThetaService.message.get({
+            tbsService.message.get({
                 action: "get",
                 messageID: $routeParams.messageID
             }, function(messageResp){
@@ -216,7 +216,7 @@ controllersM.controller('MessageController', function($scope, ThetaService, $rou
     });
 
     $scope.update = function(data){
-        ThetaService.message.save({
+        tbsService.message.save({
             action: "update"
         }, 
         data,
@@ -228,10 +228,10 @@ controllersM.controller('MessageController', function($scope, ThetaService, $rou
     };
 });
 
-controllersM.controller('MessageSummaryController', function($scope, ThetaService, messageID){
+controllersM.controller('MessageSummaryController', function($scope, tbsService, messageID){
     $scope.messageDetail= {};
     if(messageID){
-         ThetaService.message.get({
+         tbsService.message.get({
             action: "get",
             messageID: messageID
         }, function(messageDataResp){
@@ -244,8 +244,8 @@ controllersM.controller('MessageSummaryController', function($scope, ThetaServic
 
 //------------------------------------COMPLAINT
 
-controllersM.controller('ComplaintListController', function($scope, $location, $uibModal, ThetaService){ 
-    ThetaService.complaint.query({
+controllersM.controller('ComplaintListController', function($scope, $location, $uibModal, tbsService){ 
+    tbsService.complaint.query({
             action: "getColumnData"
         },
         function(response){
@@ -285,7 +285,7 @@ controllersM.controller('ComplaintListController', function($scope, $location, $
     };
     
     $scope.fetchComplaints = function(searchIp){
-        ThetaService.complaint.save({
+        tbsService.complaint.save({
                 action: "listBySeach",
                 searchIp: searchIp
             },
@@ -304,14 +304,14 @@ controllersM.controller('ComplaintListController', function($scope, $location, $
     };
 });
 
-controllersM.controller('ComplaintFormController', function($scope, ThetaService, $routeParams){
+controllersM.controller('ComplaintFormController', function($scope, tbsService, $routeParams){
     $scope.complaintData= {};
-    ThetaService.complaint.get({
+    tbsService.complaint.get({
         action: "getFormData"
     }, function(complaintFormResp){
         $scope.complaintData= complaintFormResp;
         if($routeParams.complaintID){
-            ThetaService.complaint.get({
+            tbsService.complaint.get({
                 action: "get",
                 complaintID: $routeParams.complaintID
             }, function(complaintResp){
@@ -325,7 +325,7 @@ controllersM.controller('ComplaintFormController', function($scope, ThetaService
     });
 
     $scope.update = function(data){
-        ThetaService.complaint.save({
+        tbsService.complaint.save({
             action: "update"
         }, 
         data,
@@ -337,15 +337,15 @@ controllersM.controller('ComplaintFormController', function($scope, ThetaService
     };
 });
 
-controllersM.controller('ComplaintController', function($scope, $route, $routeParams, $location, $http, ThetaService){
-    ThetaService.complaint.get({
+controllersM.controller('ComplaintController', function($scope, $route, $routeParams, $location, $http, tbsService){
+    tbsService.complaint.get({
             action: "getWizzardData"
         }, 
         function(response){
             $scope.complaintWizzard= response;
             $scope.complaintDetail= {};
             if($routeParams.complaintID){
-                 ThetaService.complaint.get({
+                 tbsService.complaint.get({
                     action: "get",
                     complaintID: $routeParams.complaintID
                 }, function(complaintDataResp){
@@ -394,7 +394,7 @@ controllersM.controller('ComplaintController', function($scope, $route, $routePa
     }
 
     $scope.submitComplaint = function(complaintDataType, complaintData){
-        var service= ThetaService[complaintDataType];
+        var service= tbsService[complaintDataType];
         var action= "save";
         if($scope.complaintDetail[complaintDataType] && $scope.complaintDetail[complaintDataType].id){
             action= "update";
@@ -430,10 +430,10 @@ controllersM.controller('ComplaintController', function($scope, $route, $routePa
     };
 });
 
-controllersM.controller('ComplaintSummaryController', function($scope, ThetaService, complaintID){
+controllersM.controller('ComplaintSummaryController', function($scope, tbsService, complaintID){
     $scope.complaintDetail= {};
     if(complaintID){
-         ThetaService.complaint.get({
+         tbsService.complaint.get({
             action: "get",
             complaintID: complaintID
         }, function(complaintDataResp){
@@ -446,8 +446,8 @@ controllersM.controller('ComplaintSummaryController', function($scope, ThetaServ
 
 //------------------------------------USER
 
-controllersM.controller('UserListController', function($scope, $location, $uibModal, ThetaService){ 
-    ThetaService.user.query({
+controllersM.controller('UserListController', function($scope, $location, $uibModal, tbsService){ 
+    tbsService.user.query({
             action: "getColumnData"
         },
         function(response){
@@ -487,7 +487,7 @@ controllersM.controller('UserListController', function($scope, $location, $uibMo
     };
     
     $scope.fetchUsers = function(searchIp){
-        ThetaService.user.save({
+        tbsService.user.save({
                 action: "listBySeach",
                 searchIp: searchIp
             },
@@ -506,15 +506,15 @@ controllersM.controller('UserListController', function($scope, $location, $uibMo
     };
 });
 
-controllersM.controller('UserController', function($scope, ThetaService, $routeParams, $location){
-    ThetaService.user.get({
+controllersM.controller('UserController', function($scope, tbsService, $routeParams, $location){
+    tbsService.user.get({
             action: "getWizzardData"
         }, 
         function(response){
             $scope.userWizzard= response;
             $scope.userDetail= {};
             if($routeParams.userID){
-                 ThetaService.user.get({
+                 tbsService.user.get({
                     action: "get",
                     userID: $routeParams.userID
                 }, function(userDataResp){
@@ -563,7 +563,7 @@ controllersM.controller('UserController', function($scope, ThetaService, $routeP
     }
 
     $scope.submitUser = function(userDataType, userData){
-        var service= ThetaService[userDataType];
+        var service= tbsService[userDataType];
         var action= "save";
         if($scope.userDetail[userDataType] && $scope.userDetail[userDataType].id){
             action= "update";
@@ -599,10 +599,10 @@ controllersM.controller('UserController', function($scope, ThetaService, $routeP
     };
 });
 
-controllersM.controller('UserSummaryController', function($scope, ThetaService, userID){
+controllersM.controller('UserSummaryController', function($scope, tbsService, userID){
     $scope.userDetail= {};
     if(userID){
-         ThetaService.user.get({
+         tbsService.user.get({
             action: "get",
             userID: userID
         }, function(userDataResp){
@@ -613,11 +613,11 @@ controllersM.controller('UserSummaryController', function($scope, ThetaService, 
     }
 });
 
-controllersM.controller('ChangePasswordController', function($scope, $location, $routeParams, ThetaService){
+controllersM.controller('ChangePasswordController', function($scope, $location, $routeParams, tbsService){
     $scope.pwData= {};
     $scope.updatePW= function(){
         if($scope.pwData.newPassword == $scope.pwData.repeatPassword){
-            ThetaService.user.save({
+            tbsService.user.save({
                 action: "updatePassword",
                 newPassword: $scope.pwData.newPassword,
                 currentPassword: $scope.pwData.currentPassword
@@ -626,7 +626,7 @@ controllersM.controller('ChangePasswordController', function($scope, $location, 
                 var responseData= response.responseData;
                 if(responseData && responseData.SUCCESS){
                     alert("Password is successfuly update. You will be logged-out now. Please Login again with new password.")
-                    window.location = '/theta/logout';
+                    window.location = '/tbs/logout';
                 }else{
                     alert("We are sorry, password update filed. Please try again in sometime.!");
                 }
@@ -641,7 +641,7 @@ controllersM.controller('ChangePasswordController', function($scope, $location, 
 
     $scope.forgotPW= function(){
         if($scope.pwData.emailID){
-            ThetaService.core.save({
+            tbsService.core.save({
                 action: "initiatePasswordUpdate",
                 emailID: $scope.pwData.emailID,
             },{},
@@ -667,7 +667,7 @@ controllersM.controller('ChangePasswordController', function($scope, $location, 
     $scope.updateForgottenPassword= function(){
         if($routeParams.token){
             if($scope.pwData.newPassword == $scope.pwData.repeatPassword){
-                ThetaService.core.save({
+                tbsService.core.save({
                     action: "updateForgottenPassword",
                     token: $routeParams.token,
                     newPassword: $scope.pwData.newPassword

@@ -1,4 +1,4 @@
-package com.nanites.theta.web.controller;
+package com.nanites.tbs.web.controller;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -22,12 +22,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nanites.theta.business.bo.ResponseEntity;
-import com.nanites.theta.business.bo.complaint.ComplaintEntity;
-import com.nanites.theta.business.service.impl.ComplaintServiceImpl;
-import com.nanites.theta.business.type.response.Param;
-import com.nanites.theta.business.util.CommonUtil;
-import com.nanites.theta.business.util.SearchInput;
+import com.nanites.tbs.business.bo.ResponseEntity;
+import com.nanites.tbs.business.bo.complaint.ComplaintEntity;
+import com.nanites.tbs.business.service.impl.ComplaintServiceImpl;
+import com.nanites.tbs.business.type.response.Param;
+import com.nanites.tbs.business.util.CommonUtil;
+import com.nanites.tbs.business.util.SearchInput;
 
 @Controller
 @RequestMapping("/complaint")
@@ -112,7 +112,7 @@ public class ComplaintController implements ResourceLoaderAware{
 	// data
 
 	/**
-	 * http://localhost:8080/theta/ctrl/complaint/getBanner
+	 * http://localhost:8080/tbs/ctrl/complaint/getBanner
 	 * 
 	 * @return
 	 * @throws IOException

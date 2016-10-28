@@ -16,7 +16,7 @@ https://mumbaipolice.maharashtra.gov.in/ourmission.asp
 
 0.
 	Domain mapping
-		www.complainkaro.com ---> http://104.238.126.194:8080/theta/static
+		www.complainkaro.com ---> http://104.238.126.194:8080/tbs/static
 		
 1.
 	Message

@@ -1,4 +1,4 @@
-package com.nanites.theta.business.type.bo.user;
+package com.nanites.tbs.business.type.bo.user;
 
 public enum Roles {
 	GUEST("ROLE_GUEST"), 

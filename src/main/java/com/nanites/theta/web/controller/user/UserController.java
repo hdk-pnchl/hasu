@@ -1,4 +1,4 @@
-package com.nanites.theta.web.controller.user;
+package com.nanites.tbs.web.controller.user;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nanites.theta.business.bo.ResponseEntity;
-import com.nanites.theta.business.bo.user.UserEntity;
-import com.nanites.theta.business.service.impl.user.UserServiceImpl;
-import com.nanites.theta.business.type.response.Param;
-import com.nanites.theta.business.util.CommonUtil;
-import com.nanites.theta.business.util.SearchInput;
+import com.nanites.tbs.business.bo.ResponseEntity;
+import com.nanites.tbs.business.bo.user.UserEntity;
+import com.nanites.tbs.business.service.impl.user.UserServiceImpl;
+import com.nanites.tbs.business.type.response.Param;
+import com.nanites.tbs.business.util.CommonUtil;
+import com.nanites.tbs.business.util.SearchInput;
 
 @Controller
 @RequestMapping("/user")
@@ -106,7 +106,7 @@ public class UserController implements ResourceLoaderAware{
 	// data
 
 	/**
-	 * http://localhost:8080/theta/ctrl/user/getBanner
+	 * http://localhost:8080/tbs/ctrl/user/getBanner
 	 * 
 	 * @return
 	 * @throws IOException

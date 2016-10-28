@@ -1,4 +1,4 @@
-package com.nanites.theta.business.bo.complaint;
+package com.nanites.tbs.business.bo.complaint;
 
 public enum ComplaintType {
 	MAJOR_COMPLAINT,
