@@ -11,9 +11,9 @@
 	<http auto-config="true">
 		<form-login 
 			login-processing-url="/login" 
-		    login-page="/static/#/signIn" 
+		    login-page="/static/#/sign" 
 		    default-target-url="/static/#/home" 
-			authentication-failure-url="/static/#/signIn/true"
+			authentication-failure-url="/static/#/sign/true"
 			username-parameter="username"
 			password-parameter="password"/>
 		<logout 

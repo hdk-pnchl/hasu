@@ -4,27 +4,31 @@
 		<meta charset="ISO-8859-1">
 		<title>tbs</title>
 
-		<link rel="stylesheet" type="text/css" href="js/resource/bootstrap/bootstrap-3.3.5/css/bootstrap.css">		
-		
-		<script type="text/javascript" src="js/resource/jquery/jquery-2.1.4.js"></script>
-		
-		<script type="text/javascript" src="js/resource/bootstrap/bootstrap-3.3.5/js/bootstrap.js"></script>
-		
-		<script type="text/javascript" src="js/resource/angularjs/angular-1.5.6/angular.js"></script>
-		<script type="text/javascript" src="js/resource/angularjs/angular-1.5.6/angular-route.js"></script>
-		<script type="text/javascript" src="js/resource/angularjs/angular-1.5.6/angular-resource.js"></script>
-    	<script type="text/javascript" src="js/resource/angularjs/angular-1.5.6/angular-animate.js"></script>
-
-		<script type="text/javascript" src="js/resource/angularjs/angular-ui/ui-bootstrap-tpls-2.0.0.js"></script>
-		
-		<script type="text/javascript" src="js/controller.js"></script>
-		<script type="text/javascript" src="js/services.js"></script>	
-		<script type="text/javascript" src="js/directive.js"></script>	
-		<script type="text/javascript" src="js/app.js"></script>
+		<!-- *************** CSS *************** -->
+		<!-- BOOTSTRAP -->
+		<link rel="stylesheet" type="text/css" href="resource/bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="element/css/windows.css">
+		<!-- *************** JS *************** -->
+		<!-- JQUERY -->
+		<script type="text/javascript" src="resource/jquery/jquery-2.1.4.js"></script>
+		<!-- BOOTSTRAP -->
+		<script type="text/javascript" src="resource/bootstrap/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+		<!-- ANGULARJS -->
+		<script type="text/javascript" src="resource/angularjs/angular-1.5.6/angular.js"></script>
+		<script type="text/javascript" src="resource/angularjs/angular-1.5.6/angular-route.js"></script>
+		<script type="text/javascript" src="resource/angularjs/angular-1.5.6/angular-resource.js"></script>
+    	<script type="text/javascript" src="resource/angularjs/angular-1.5.6/angular-animate.js"></script>
+    	<!-- LIB -->
+		<script type="text/javascript" src="resource/angularjs/angular-ui/ui-bootstrap-tpls-2.0.0.js"></script>
+    	<!-- APP -->
+		<script type="text/javascript" src="element/js/controller.js"></script>
+		<script type="text/javascript" src="element/js/services.js"></script>	
+		<script type="text/javascript" src="element/js/directive.js"></script>	
+		<script type="text/javascript" src="element/js/app.js"></script>
 		<style type="text/css">
 			body {
 			  #min-height: 2000px;
-			  padding-top: 70px;
+			  #padding-top: 70px;
 			}
 		</style>
 	</head>
@@ -33,7 +37,8 @@
 			<portal-banner banner-data="bannerData"/>
 		</div>	
 		<div ng-view></div>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<!--
 		<portal-footer data="footerData"/>
+		-->
 	</body>
 </html>

@@ -1,6 +1,6 @@
 {
 	"projectData": {
-		"projectName": "tbs",
+		"projectName": "Train Brain STUDIO",
 		"defaultPath": "/home"
 	},
 	"navData": {
@@ -31,27 +31,16 @@
 			}
 		}, 
 		"configNavData": {
-			"signUp": {
-				"title": "Sign Up",
-				"active": false,
-				"disabled": false,
-				"hidden": false,
-				"type": "TEXT",
-				"path": "/signUp",
-				"modalSize": "lg",
-				"html": "html/core/signUp.html",
-				"controller": "SignUpController"
-			},
 			"signIn":{
-				"title": "Sign In",
+				"title": "Sign In/Up",
 				"active": false,
 				"disabled": false,
 				"hidden": false,
 				"type": "TEXT",
-				"path": "/signIn",
+				"path": "/sign",
 				"modalSize": "lg",
-				"html": "html/core/signIn.html",
-				"controller": "SignInController"
+				"html": "html/core/sign.html",
+				"controller": "SignController"
 			}
 		}
 	}
