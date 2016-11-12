@@ -1,3 +1,15 @@
+http://localhost:8080/tbs/static/#/aboutUs
+http://localhost:8080/
+http://104.238.126.194:8080/tbs/static/
+http://104.238.126.194:8080/tbs/static/#/home
+http://www.trainbrainstudio.com/tbs/ctrl/core/getBannerData 
+
+XMLHttpRequest cannot load 
+	http://104.238.126.194:8080/tbs/ctrl/core/getBannerData. 
+No 'Access-Control-Allow-Origin' header is present on the requested resource. 
+Origin 'http://localhost:8080' is therefore not allowed access.
+
+
 echo "# hasu" >> README.md
 git init
 git add README.md
