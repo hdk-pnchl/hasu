@@ -5,7 +5,7 @@ tbsM.config(function($resourceProvider){});
 tbsM.config(['$routeProvider', function($routeProvider){
 	//Home
 	$routeProvider.when('/home', {
-		templateUrl: 'element/html/core/home/home_001.html',
+		templateUrl: 'element/html/core/home/home.html',
 		//templateUrl: 'html/core/home_002.html',
 		//templateUrl: 'html/core/home_003.html',
 		controller: 'HomeController'

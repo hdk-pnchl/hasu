@@ -3,6 +3,7 @@ http://localhost:8080/
 http://104.238.126.194:8080/tbs/static/
 http://104.238.126.194:8080/tbs/static/#/home
 http://www.trainbrainstudio.com/tbs/ctrl/core/getBannerData 
+http://www.trainbrainstudio.com/#/home
 
 XMLHttpRequest cannot load 
 	http://104.238.126.194:8080/tbs/ctrl/core/getBannerData. 
