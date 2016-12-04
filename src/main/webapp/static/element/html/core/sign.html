@@ -17,7 +17,7 @@
             </div>
             <div class="wrap">
                 <p class="form-title">Continue here</p>
-                <form class="login" method="post" action="/tbs/login">
+                <form class="login" method="post" action="{{submitBaseURL}}">
                     <input type="email" name="username" placeholder="Username" />
                     <input type="password" name="password" placeholder="Password" />
                     <input type="submit" value="Play" class="btn btn-success btn-sm" />
@@ -44,7 +44,7 @@
             </div>
             <div class="wrap">
                 <p class="form-title">Begin Here</p>
-                <form class="login">
+                <form class="login">             
                     <input type="text" required="required" placeholder="Name" ng-model="user.basicDetail.name">
                     <input type="email" placeholder="Email" ng-model="user.basicDetail.emailID">
                     <input type="password" placeholder="Password" ng-model="user.basicDetail.password">

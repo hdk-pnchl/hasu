@@ -3,6 +3,10 @@ var controllersM= angular.module('controllersM', ['servicesM', 'ui.bootstrap']);
 //------------------------------------CORE
 
 controllersM.controller('CoreController', function($scope, $http, $location, $rootScope, tbsService){
+	
+	//$scope.rootPath= "http://104.238.126.194:8080/tbs/";
+	$scope.rootPath= "http://localhost:8080/tbs/";
+	
     tbsService.core.get({
             action: "getBannerData"
         }, 
@@ -47,13 +51,18 @@ controllersM.controller('SignController', function($scope, $location, tbsService
     $scope.user= {};
     $scope.isEmailTaken= false;
     $scope.isPasswordMatching= true;
+    $scope.submitBaseURL= $scope.$parent.rootPath+"login";
     $scope.signUp= function(){
-        if($scope.user.basicDetail.password != $scope.user.basicDetail.confirmPassword){
-            $scope.isPasswordMatching= false;
-        }else{
-            $scope.isPasswordMatching= true;
-            //server call: check if email id not already taken
-            tbsService.core.save({
+    	if($scope.user.basicDetail 
+    			&& $scope.user.basicDetail.password 
+    			&& $scope.user.basicDetail.confirmPassword 
+    			&& $scope.user.basicDetail.emailID){
+            if($scope.user.basicDetail.password != $scope.user.basicDetail.confirmPassword){
+                $scope.isPasswordMatching= false;
+            }else{
+                $scope.isPasswordMatching= true;
+                //server call: check if email id not already taken
+                tbsService.core.save({
                     action: "isEmailIdTaken",
                     emailID: $scope.user.basicDetail.emailID
                 },{},
@@ -77,9 +86,9 @@ controllersM.controller('SignController', function($scope, $location, tbsService
                 }, 
                 function(){
                     alert("isEmailIdTaken call failed");
-                }
-            );
-        }
+                });
+            }    		
+    	}
     };
 
     if($routeParams.error){

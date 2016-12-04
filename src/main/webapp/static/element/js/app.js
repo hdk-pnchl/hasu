@@ -5,15 +5,13 @@ tbsM.config(function($resourceProvider){});
 tbsM.config(['$routeProvider', function($routeProvider){
 	//Home
 	$routeProvider.when('/home', {
-		templateUrl: 'element/html/core/home/home.html',
-		//templateUrl: 'html/core/home_002.html',
-		//templateUrl: 'html/core/home_003.html',
+		templateUrl: 'element/html/core/home.html',
 		controller: 'HomeController'
 	});
 
 	//aboutUs
 	$routeProvider.when('/aboutUs', {
-		templateUrl: 'element/html/core/home/home_002.html',
+		templateUrl: 'element/html/core/aboutUs.html',
 		controller: 'AboutUsController'
 	});
 
