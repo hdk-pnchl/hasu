@@ -4,8 +4,8 @@ var controllersM= angular.module('controllersM', ['servicesM', 'ui.bootstrap']);
 
 controllersM.controller('CoreController', function($scope, $http, $location, $rootScope, tbsService){
 	
-	//$scope.rootPath= "http://104.238.126.194:8080/tbs/";
-	$scope.rootPath= "http://localhost:8080/tbs/";
+	$scope.rootPath= "http://104.238.126.194:8080/tbs/";
+	//$scope.rootPath= "http://localhost:8080/tbs/";
 	
     tbsService.core.get({
             action: "getBannerData"
