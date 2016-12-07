@@ -116,3 +116,7 @@ tbsM.config(['$routeProvider', function($routeProvider){
 tbsM.config(['$locationProvider', function($locationProvider){}]);
 
 
+tbsM.config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist(['**']);
+});
+
