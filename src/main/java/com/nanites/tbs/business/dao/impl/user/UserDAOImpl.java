@@ -48,9 +48,10 @@ public class UserDAOImpl extends AbstractDAO {
 		if(emailID != null) {
 			innerCriteria.add(Restrictions.eq("emailID", emailID));
 		}
-		Object userObject = criteria.uniqueResult();
-		if(userObject != null) {
-			user = (UserEntity) userObject;
+		@SuppressWarnings("unchecked")
+		List<UserEntity> list = criteria.list();
+		if(list != null && !list.isEmpty() && list.size()==1) {
+			user = list.get(0);
 		}
 		return user;
 	}
