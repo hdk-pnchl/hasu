@@ -2,36 +2,37 @@ var serviceM= angular.module('servicesM', ['ngResource']);
 
 serviceM.factory('tbsService', function($resource){
     var webResource= {};
-    //var rootPath= 'http://localhost:8080/';
-    var rootPath= 'http://104.238.126.194:8080';
     
-    webResource.core= $resource(rootPath+'/tbs/ctrl/core/:action',{
+    webResource.rootPath= 'http://104.238.126.194:8080/tbs';
+    //webResource.rootPath= 'http://localhost:8080/tbs';
+
+    webResource.core= $resource(webResource.rootPath+'/ctrl/core/:action',{
         action: '@action'
     });
-    webResource.message= $resource(rootPath+'/tbs/ctrl/message/:action',{
+    webResource.message= $resource(webResource.rootPath+'/ctrl/message/:action',{
         action: '@action'
     });
-    webResource.complaint= $resource(rootPath+'/tbs/ctrl/complaint/:action',{
+    webResource.complaint= $resource(webResource.rootPath+'/ctrl/complaint/:action',{
         action: '@action'
     });
 
     // User
-    webResource.user= $resource(rootPath+'/tbs/ctrl/user/:action',{
+    webResource.user= $resource(webResource.rootPath+'/ctrl/user/:action',{
         action: '@action'
     });    
-    webResource.address= $resource(rootPath+'/tbs/ctrl/user/address/:action',{
+    webResource.address= $resource(webResource.rootPath+'/ctrl/user/address/:action',{
         action: '@action'
     });  
-    webResource.basicDetail= $resource(rootPath+'/tbs/ctrl/user/basicDetail/:action',{
+    webResource.basicDetail= $resource(webResource.rootPath+'/ctrl/user/basicDetail/:action',{
         action: '@action'
     });  
-    webResource.education= $resource(rootPath+'/tbs/ctrl/user/education/:action',{
+    webResource.education= $resource(webResource.rootPath+'/ctrl/user/education/:action',{
         action: '@action'
     });  
-    webResource.idDetail= $resource(rootPath+'/tbs/ctrl/user/idDetail/:action',{
+    webResource.idDetail= $resource(webResource.rootPath+'/ctrl/user/idDetail/:action',{
         action: '@action'
     });
-    webResource.occupation= $resource(rootPath+'/tbs/ctrl/user/occupation/:action',{
+    webResource.occupation= $resource(webResource.rootPath+'/ctrl/user/occupation/:action',{
         action: '@action'
     });
     return webResource;

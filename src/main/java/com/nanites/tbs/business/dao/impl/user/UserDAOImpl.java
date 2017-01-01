@@ -50,7 +50,7 @@ public class UserDAOImpl extends AbstractDAO {
 		}
 		@SuppressWarnings("unchecked")
 		List<UserEntity> list = criteria.list();
-		if(list != null && !list.isEmpty() && list.size()==1) {
+		if(list != null && !list.isEmpty()) {
 			user = list.get(0);
 		}
 		return user;

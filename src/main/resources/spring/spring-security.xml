@@ -13,7 +13,7 @@
 			login-processing-url="/login" 
 		    login-page="/static/#/sign" 
 		    default-target-url="/static/#/home" 
-			authentication-failure-url="/static/#/sign/true"
+			authentication-failure-url="/static/#/signIn/true"
 			username-parameter="username"
 			password-parameter="password"/>
 		<logout 

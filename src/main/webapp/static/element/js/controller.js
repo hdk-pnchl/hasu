@@ -3,10 +3,6 @@ var controllersM= angular.module('controllersM', ['servicesM', 'ui.bootstrap']);
 //------------------------------------CORE
 
 controllersM.controller('CoreController', function($scope, $http, $location, $rootScope, tbsService){
-	
-	$scope.rootPath= "http://104.238.126.194:8080/tbs/";
-	//$scope.rootPath= "http://localhost:8080/tbs/";
-	
     tbsService.core.get({
             action: "getBannerData"
         }, 
@@ -51,7 +47,7 @@ controllersM.controller('SignController', function($scope, $location, tbsService
     $scope.user= {};
     $scope.isEmailTaken= false;
     $scope.isPasswordMatching= true;
-    $scope.submitBaseURL= $scope.$parent.rootPath+"login";
+    $scope.submitBaseURL= tbsService.rootPath+"/login";
     $scope.signUp= function(){
     	if($scope.user.basicDetail 
     			&& $scope.user.basicDetail.password 
@@ -67,7 +63,7 @@ controllersM.controller('SignController', function($scope, $location, tbsService
                     emailID: $scope.user.basicDetail.emailID
                 },{},
                 function(response){
-                    if(response && response.isEmailIdTaken){
+                    if(response && response.IS_EMAILID_TAKEN){
                         $scope.isEmailTaken= true;
                     }else{
                         $scope.isEmailTaken= false;
@@ -90,7 +86,9 @@ controllersM.controller('SignController', function($scope, $location, tbsService
             }    		
     	}
     };
-
+    $scope.forgotPwInitiate= function(){
+        $location.path("/user/forgotPassword");
+    }
     if($routeParams.error){
         alert("Please enter valid Credentials!");
     }
@@ -620,6 +618,9 @@ controllersM.controller('UserSummaryController', function($scope, tbsService, us
 
 controllersM.controller('ChangePasswordController', function($scope, $location, $routeParams, tbsService){
     $scope.pwData= {};
+    $scope.pwData.ERR_USER_DOESNT_EXISTS= false;
+    $scope.pwData.missingEmailID= false;
+    $scope.pwData.isPasswordMatching= true;
     $scope.updatePW= function(){
         if($scope.pwData.newPassword == $scope.pwData.repeatPassword){
             tbsService.user.save({
@@ -628,44 +629,45 @@ controllersM.controller('ChangePasswordController', function($scope, $location, 
                 currentPassword: $scope.pwData.currentPassword
             },{},
             function(response){
-                var responseData= response.responseData;
-                if(responseData && responseData.SUCCESS){
-                    alert("Password is successfuly update. You will be logged-out now. Please Login again with new password.")
+                if(response.responseData && response.responseData.SUCCESS && (response.responseData.SUCCESS == "true")){
+                    alert("Password is successfuly updated. You will be logged-out now. Please Login again with new password.")
                     window.location = '/tbs/logout';
                 }else{
-                    alert("We are sorry, password update filed. Please try again in sometime.!");
+                    alert("We are sorry, password update failed. Please try again in sometime.!");
                 }
             }, 
             function(){
-                alert("updatePassword call failed");
+                alert("We are sorry, password update failed. Please try again in sometime.!");
             });
         }else{
-            alert("Repeat-password does not match with New-password! Please make sure to enter both the password same.")
+            $scope.isPasswordMatching= false;
+            //alert("Repeat-password does not match with New-password! Please make sure to enter both the password same.")
         }
     };
 
     $scope.forgotPW= function(){
+        $scope.pwData.missingEmailID= false;
         if($scope.pwData.emailID){
             tbsService.core.save({
                 action: "initiatePasswordUpdate",
                 emailID: $scope.pwData.emailID,
             },{},
             function(response){
-                var responseData= response.responseData;
-                if(responseData && responseData.SUCCESS){
-                    $scope.pwData.forgotPWLink= responseData.PW_UPDATE_URL;
+                if(response.responseData && response.responseData.SUCCESS && (response.responseData.SUCCESS == "true")){
+                    $scope.pwData.forgotPWLink= response.responseData.PW_UPDATE_URL;
+                    $scope.pwData.ERR_USER_DOESNT_EXISTS= false;
                     alert("Password update link successfuly sent your registered email id.")
-                }else if(responseData && responseData.ERR_USER_DOESNT_EXISTS){
-                    alert("Afraid, there is no account associated with given Email ID. Please check the Email ID and try again.");
+                }else if(response.responseData && response.responseData.ERR_USER_DOESNT_EXISTS && (response.responseData.ERR_USER_DOESNT_EXISTS == "true")){
+                    $scope.pwData.ERR_USER_DOESNT_EXISTS= true;
                 }else{
-                    alert("We are sorry, Forgot-password flow filed. Please try again in sometime.!");
+                    alert("We are sorry, Forgot-password flow failed. Please try again in sometime.!");
                 }
             }, 
             function(){
-                alert("initiatePasswordUpdate call failed");
+                alert("We are sorry, Forgot-password flow failed. Please try again in sometime.!");
             });
         }else{
-            alert("Please enter the Email ID.")
+            $scope.pwData.missingEmailID= true;
         }
     };
 
@@ -679,7 +681,7 @@ controllersM.controller('ChangePasswordController', function($scope, $location, 
                 },{},
                 function(response){
                     var responseData= response.responseData;
-                    if(responseData && responseData.SUCCESS){
+                    if(responseData && responseData.SUCCESS && (responseData.SUCCESS == "true")){
                         alert("Password is successfuly update. Please login to your account with new password.")
                         $location.path($scope.$parent.bannerData.navData.configNavData.signIn.path);
                     }else{

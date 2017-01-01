@@ -26,12 +26,18 @@ tbsM.config(['$routeProvider', function($routeProvider){
 	});
 
 	//singIn
-	$routeProvider.when('/sign', {
-		templateUrl: 'element/html/core/sign.html',
+	$routeProvider.when('/signIn', {
+		templateUrl: 'element/html/core/signIn.html',
 		controller: 'SignController'
 	});
-	$routeProvider.when('/sign/:error', {
-		templateUrl: 'element/html/core/sign.html',
+	$routeProvider.when('/signIn/:error', {
+		templateUrl: 'element/html/core/signIn.html',
+		controller: 'SignController'
+	});
+
+	//singUp
+	$routeProvider.when('/signUp', {
+		templateUrl: 'element/html/core/signUp.html',
 		controller: 'SignController'
 	});
 

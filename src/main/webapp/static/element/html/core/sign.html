@@ -18,9 +18,9 @@
             <div class="wrap">
                 <p class="form-title">Continue here</p>
                 <form class="login" method="post" action="{{submitBaseURL}}">
-                    <input type="email" name="username" placeholder="Username" />
-                    <input type="password" name="password" placeholder="Password" />
-                    <input type="submit" value="Play" class="btn btn-success btn-sm" />
+                    <input type="email" required="required" name="username" placeholder="Username" />
+                    <input type="password" required="required" name="password" placeholder="Password" />
+                    <input type="submit" value="Sign IN" class="btn btn-success btn-sm" />
                     <div class="remember-forgot">
                         <div class="row">
                             <div class="col-md-3"></div>
@@ -44,14 +44,14 @@
             </div>
             <div class="wrap">
                 <p class="form-title">Begin Here</p>
-                <form class="login">             
+                <form class="login">
                     <input type="text" required="required" placeholder="Name" ng-model="user.basicDetail.name">
-                    <input type="email" placeholder="Email" ng-model="user.basicDetail.emailID">
-                    <input type="password" placeholder="Password" ng-model="user.basicDetail.password">
-                    <input type="password" placeholder="Confirm password" ng-model="user.basicDetail.confirmPassword">
-                    <input type="number" placeholder="Contact No." ng-model="user.basicDetail.contactNo">
+                    <input type="email" required="required" placeholder="Email" ng-model="user.basicDetail.emailID">
+                    <input type="password" required="required" placeholder="Password" ng-model="user.basicDetail.password">
+                    <input type="password" required="required" placeholder="Confirm password" ng-model="user.basicDetail.confirmPassword">
+                    <input type="number" required="required" placeholder="Contact No." ng-model="user.basicDetail.contactNo">
 
-                    <input type="submit" value="Play" class="btn btn-success btn-sm" ng-click="signUp()"/>
+                    <input type="submit" value="Sign Up" class="btn btn-success btn-sm" ng-click="signUp()"/>
                     <div class="remember-forgot">
                         <div class="row">
                             <div class="col-md-6"></div>
