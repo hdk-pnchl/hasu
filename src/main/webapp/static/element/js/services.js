@@ -3,7 +3,7 @@ var serviceM= angular.module('servicesM', ['ngResource']);
 serviceM.factory('tbsService', function($resource){
     var webResource= {};
     
-    webResource.rootPath= 'http://104.238.126.194:8080/tbs';
+    //webResource.rootPath= 'http://104.238.126.194:8080/tbs';
     //webResource.rootPath= 'http://localhost:8080/tbs';
 
     webResource.core= $resource(webResource.rootPath+'/ctrl/core/:action',{
